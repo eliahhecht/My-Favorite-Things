@@ -10,13 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101216234509) do
+ActiveRecord::Schema.define(:version => 20101217002148) do
 
   create_table "things", :force => true do |t|
     t.string   "name"
-    t.string   "body_text"
+    t.text     "body_text",          :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
   end
 
 end

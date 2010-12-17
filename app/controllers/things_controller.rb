@@ -2,7 +2,7 @@ class ThingsController < ApplicationController
   # GET /things
   # GET /things.xml
   def index
-    @things = Thing.all
+    @things = Thing.find(:all, :order => "updated_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb

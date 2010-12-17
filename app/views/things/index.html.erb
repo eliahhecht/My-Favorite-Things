@@ -1,24 +1,15 @@
-<h1>Listing things</h1>
+<h1>A few of my favorite things</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Body text</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<ul class="things">
 
 <% @things.each do |thing| %>
-  <tr>
-    <td><%= thing.name %></td>
-    <td><%= thing.body_text %></td>
-    <td><%= link_to 'Show', thing %></td>
-    <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
-    <td><%= link_to 'Destroy', thing, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <li>
+    <h2><%= link_to thing.name, thing %></h2>
+		<p><%= thing.body_text %></p>
+  </li>
 <% end %>
-</table>
+
+</ul>
 
 <br />
 
